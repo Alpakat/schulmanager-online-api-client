@@ -1,0 +1,1 @@
+{"version":3,"file":"generateStandartConfig.d.ts","sourceRoot":"","sources":["../src/generateStandartConfig.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,MAAM,OAAO,CAAA;AAE1C,MAAM,CAAC,OAAO,UAAU,sBAAsB,CAAC,EAAE,KAAK,EAAE,IAAI,EAAE,EAAE;IAAE,KAAK,EAAE,MAAM,CAAC;IAAC,IAAI,EAAE,MAAM,CAAA;CAAE,2BAe9F"}
