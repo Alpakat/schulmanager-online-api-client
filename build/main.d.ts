@@ -6,11 +6,18 @@
 export declare class SchulmanagerAPI {
     #private;
     /**
-* Init the SMO Api
+* Login to the SMO API
 * @exports schulmanager-online-api.default
-* @param {string} token - The JWS of your SMO Login.
+* @param {storeToken} storeToken - NOT RECOMENDED: if true, token will be stored in a json file. Please use own secure storage and provide token in the login option.
 */
-    constructor(token: string);
+    constructor(storeToken: boolean);
+    /**
+* Login to the SMO API
+* @param {email} email - Email of SMO Login
+* @param {password?} password - Password of SMO Login. If not provided, and token is invalid, login will fail.
+* @param {token?} token - Token of last Login. Recomended over storeToken of this library. If not given or expired, a new login will be created.
+*/
+    login(email: string, password?: string, token?: string): Promise<void>;
     /**
  * Get an overview of all Letters.
  * @return {Object} An Array of the letters
@@ -28,17 +35,30 @@ export declare class SchulmanagerAPI {
     getSchedules(dates: {
         start: string;
         end: string;
-    }, student: {
-        id: number;
-        firstname: string;
-        lastname: string;
-        sex: string;
-        classId: number;
     }): Promise<"There was an error, fetching the data. Is your Token correct?" | {
         classHour: import("./types/scheduleResponse").ClassHour;
         date: string;
         actualLesson: import("./types/scheduleResponse").ActualLesson;
         originalLesson: import("./types/scheduleResponse").ActualLesson | undefined;
+    }[]>;
+    /**
+* Get an overview of the Curren Schedule.
+* @return {Object} The Schedule
+*/
+    getExams(dates: {
+        start: string;
+        end: string;
+    }): Promise<"There was an error, fetching the data. Is your Token correct?" | {
+        subject: {
+            name: string;
+            abbreviation: string;
+        };
+        comment: string;
+        createdAt: Date;
+        updatedAt: Date;
+        date: Date;
+        startClass: string;
+        endClass: string;
     }[]>;
 }
 //# sourceMappingURL=main.d.ts.map

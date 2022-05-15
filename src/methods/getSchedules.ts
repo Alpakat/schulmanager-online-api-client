@@ -6,28 +6,8 @@ export default async function getSchedules({ token, dates, student }: { token: s
 
 	const data = JSON.stringify(
 		{
-			"bundleVersion": `0f6a1ee27a8f17947fc5`, "requests": [
-				{
-					"moduleName": `schedules`,
-					"endpointName": `poqa`,
-					"parameters":
-					{
-						"action":
-						{
-							"model": `main/occurrence`,
-							"action": `findAll`,
-							"parameters": [
-								{
-									"where":
-									{
-										"dates":
-											{ "$not": null }
-									}
-								}
-							]
-						}
-					}
-				},
+			"bundleVersion": `3128cbe28328d945ac28`,
+			"requests": [
 				{
 					"moduleName": `schedules`,
 					"endpointName": `get-actual-lessons`,

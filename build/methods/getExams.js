@@ -5,13 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const generateStandartConfig_1 = __importDefault(require("../generateStandartConfig"));
-async function getSchedules({ token, dates, student }) {
+async function getExams({ token, dates, student }) {
     const data = JSON.stringify({
         "bundleVersion": `3128cbe28328d945ac28`,
         "requests": [
             {
-                "moduleName": `schedules`,
-                "endpointName": `get-actual-lessons`,
+                "moduleName": `exams`,
+                "endpointName": `get-exams`,
                 "parameters": {
                     "student": student,
                     "start": dates.start,
@@ -24,12 +24,12 @@ async function getSchedules({ token, dates, student }) {
     const res = await axios_1.default.request(config);
     const resData = res.data;
     try {
-        return resData.results[1].data.map(e => { return { classHour: e.classHour, date: e.date, actualLesson: e.actualLesson, originalLesson: e.originalLessons ? e.originalLessons[0] : undefined }; });
+        return resData.results[0].data.map(e => { return { subject: { name: e.subject.name, abbreviation: e.subject.abbreviation }, comment: e.comment, createdAt: e.createdAt, updatedAt: e.updatedAt, date: e.date, startClass: e.startClassHour.number, endClass: e.endClassHour.number }; });
         // return resData.results[1].data.map(e => { return { classHour: e.classHour, date: e.date, actualLesson: e.actualLesson } })
     }
     catch (error) {
         return `There was an error, fetching the data. Is your Token correct?`;
     }
 }
-exports.default = getSchedules;
-//# sourceMappingURL=getSchedules.js.map
+exports.default = getExams;
+//# sourceMappingURL=getExams.js.map

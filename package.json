@@ -9,9 +9,13 @@
     "build": "tsc"
   },
   "dependencies": {
-    "axios": "^0.23.0"
+    "@peculiar/webcrypto": "^1.4.0",
+    "axios": "^0.23.0",
+    "dotenv": "^16.0.1",
+    "node-json-db": "^1.5.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.33",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1"
