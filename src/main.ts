@@ -65,6 +65,15 @@ export class SchulmanagerAPI {
 	}
 
 	/**
+* Get token after login.
+* @return {String} Token
+*/
+
+	getToken() {
+		return this.#token
+	}
+
+	/**
  * Get an overview of all Letters.
  * @return {Object} An Array of the letters
  */

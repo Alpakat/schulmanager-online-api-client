@@ -19,6 +19,11 @@ export declare class SchulmanagerAPI {
 */
     login(email: string, password?: string, token?: string): Promise<void>;
     /**
+* Get token after login.
+* @return {String} Token
+*/
+    getToken(): string | undefined;
+    /**
  * Get an overview of all Letters.
  * @return {Object} An Array of the letters
  */

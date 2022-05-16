@@ -64,6 +64,13 @@ class SchulmanagerAPI {
         }
     }
     /**
+* Get token after login.
+* @return {String} Token
+*/
+    getToken() {
+        return __classPrivateFieldGet(this, _SchulmanagerAPI_token, "f");
+    }
+    /**
  * Get an overview of all Letters.
  * @return {Object} An Array of the letters
  */
