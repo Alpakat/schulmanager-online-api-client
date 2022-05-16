@@ -40,7 +40,7 @@ export declare class SchulmanagerAPI {
     getSchedules(dates: {
         start: string;
         end: string;
-    }): Promise<"There was an error, fetching the data. Is your Token correct?" | {
+    }): Promise<string | {
         classHour: import("./types/scheduleResponse").ClassHour;
         date: string;
         actualLesson: import("./types/scheduleResponse").ActualLesson;

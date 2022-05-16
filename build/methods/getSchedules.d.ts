@@ -11,7 +11,7 @@ export default function getSchedules({ token, dates, student }: {
         sex: string;
         classId: number;
     };
-}): Promise<"There was an error, fetching the data. Is your Token correct?" | {
+}): Promise<string | {
     classHour: import("../types/scheduleResponse").ClassHour;
     date: string;
     actualLesson: import("../types/scheduleResponse").ActualLesson;

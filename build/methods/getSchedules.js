@@ -24,11 +24,11 @@ async function getSchedules({ token, dates, student }) {
     const res = await axios_1.default.request(config);
     const resData = res.data;
     try {
-        return resData.results[1].data.map(e => { return { classHour: e.classHour, date: e.date, actualLesson: e.actualLesson, originalLesson: e.originalLessons ? e.originalLessons[0] : undefined }; });
+        return resData.results[0].data.map(e => { return { classHour: e.classHour, date: e.date, actualLesson: e.actualLesson, originalLesson: e.originalLessons ? e.originalLessons[0] : undefined }; });
         // return resData.results[1].data.map(e => { return { classHour: e.classHour, date: e.date, actualLesson: e.actualLesson } })
     }
     catch (error) {
-        return `There was an error, fetching the data. Is your Token correct?`;
+        return `There was an error, fetching the data. Is your Token correct? ${error}`;
     }
 }
 exports.default = getSchedules;

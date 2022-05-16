@@ -1,5 +1,5 @@
 export interface ScheduleResponse {
-    results: [Result, Result2]
+    results: [Result2]
     systemStatusMessages: any[]
 }
 
