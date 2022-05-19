@@ -8,8 +8,8 @@ const crypto = new Crypto()
 export default async function login(email: string, token?: string, password?: string) {
 	if (token) {
 		const loginStatus = await api_checkLoginStatus(token)
-		if (loginStatus.isAuthenticated) {
-			return { token: loginStatus.headers[`x-new-bearer-token`] || token, userData: loginStatus.user }
+		if (loginStatus.data.isAuthenticated) {
+			return { token: loginStatus.headers[`x-new-bearer-token`] || token, userData: loginStatus.data.user }
 		}
 	}
 	if (!password) {
@@ -23,7 +23,7 @@ async function api_checkLoginStatus(token: string) {
 
 	try {
 		const res = await axios.post<loginStatusResponse>(`https://login.schulmanager-online.de/api/login-status`, {}, { headers: { "Authorization": `Bearer ` + token } })
-		return res.data
+		return res
 	} catch (error) {
 		throw new Error(`Error checking login status`)
 	}

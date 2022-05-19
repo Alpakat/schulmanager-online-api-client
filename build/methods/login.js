@@ -9,8 +9,8 @@ const crypto = new webcrypto_1.Crypto();
 async function login(email, token, password) {
     if (token) {
         const loginStatus = await api_checkLoginStatus(token);
-        if (loginStatus.isAuthenticated) {
-            return { token: loginStatus.headers[`x-new-bearer-token`] || token, userData: loginStatus.user };
+        if (loginStatus.data.isAuthenticated) {
+            return { token: loginStatus.headers[`x-new-bearer-token`] || token, userData: loginStatus.data.user };
         }
     }
     if (!password) {
@@ -23,7 +23,7 @@ exports.default = login;
 async function api_checkLoginStatus(token) {
     try {
         const res = await axios_1.default.post(`https://login.schulmanager-online.de/api/login-status`, {}, { headers: { "Authorization": `Bearer ` + token } });
-        return res.data;
+        return res;
     }
     catch (error) {
         throw new Error(`Error checking login status`);
