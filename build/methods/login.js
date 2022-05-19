@@ -10,7 +10,7 @@ async function login(email, token, password) {
     if (token) {
         const loginStatus = await api_checkLoginStatus(token);
         if (loginStatus.isAuthenticated) {
-            return { token: token, userData: loginStatus.user };
+            return { token: loginStatus.headers[`x-new-bearer-token`] || token, userData: loginStatus.user };
         }
     }
     if (!password) {
