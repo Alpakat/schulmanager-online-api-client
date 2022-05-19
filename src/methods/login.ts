@@ -9,10 +9,10 @@ export default async function login(email: string, token?: string, password?: st
 	if (token) {
 		const loginStatus = await api_checkLoginStatus(token)
 		if (loginStatus.isAuthenticated) {
-			return { token: token, userData: loginStatus.user }
+			return { token: loginStatus.headers[`x-new-bearer-token`] || token, userData: loginStatus.user }
 		}
 	}
-	if(!password) {
+	if (!password) {
 		throw new Error(`Login failed. Please provide password.`)
 	}
 	const loginResponse = await api_login(email, password)

@@ -25,4 +25,5 @@ export interface User {
 export interface loginStatusResponse {
     isAuthenticated: boolean;
     user: User;
+    headers: any;
 }
