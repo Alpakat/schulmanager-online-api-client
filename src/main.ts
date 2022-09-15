@@ -8,6 +8,7 @@ import { Config } from 'node-json-db/dist/lib/JsonDBConfig'
 
 import dotenv from "dotenv"
 import getExams from "./methods/getExams"
+import getInfo from "./methods/getInfo"
 
 dotenv.config()
 
@@ -112,6 +113,20 @@ export class SchulmanagerAPI {
 		}
 
 		return getExams({ token: this.#token, dates: dates, student: this.#user.associatedStudent })
+	}
+
+	/**
+* Get an overview of the Curren Schedule.
+* @return {Object} The Schedule
+*/
+
+	getInfos() {
+		if (!this.#token || !this.#user) {
+			throw new Error(`Please login first`)
+
+		}
+
+		return getInfo({ token: this.#token })
 	}
 
 }
