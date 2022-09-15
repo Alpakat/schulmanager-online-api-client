@@ -23,6 +23,7 @@ const node_json_db_1 = require("node-json-db");
 const JsonDBConfig_1 = require("node-json-db/dist/lib/JsonDBConfig");
 const dotenv_1 = __importDefault(require("dotenv"));
 const getExams_1 = __importDefault(require("./methods/getExams"));
+const getInfo_1 = __importDefault(require("./methods/getInfo"));
 dotenv_1.default.config();
 /**
  * Interface for the SMO Api.
@@ -99,6 +100,16 @@ class SchulmanagerAPI {
             throw new Error(`Please login first`);
         }
         return (0, getExams_1.default)({ token: __classPrivateFieldGet(this, _SchulmanagerAPI_token, "f"), dates: dates, student: __classPrivateFieldGet(this, _SchulmanagerAPI_user, "f").associatedStudent });
+    }
+    /**
+* Get current infos.
+* @return {Object} The Schedule
+*/
+    getInfos() {
+        if (!__classPrivateFieldGet(this, _SchulmanagerAPI_token, "f") || !__classPrivateFieldGet(this, _SchulmanagerAPI_user, "f")) {
+            throw new Error(`Please login first`);
+        }
+        return (0, getInfo_1.default)({ token: __classPrivateFieldGet(this, _SchulmanagerAPI_token, "f") });
     }
 }
 exports.SchulmanagerAPI = SchulmanagerAPI;

@@ -116,7 +116,7 @@ export class SchulmanagerAPI {
 	}
 
 	/**
-* Get an overview of the Curren Schedule.
+* Get current infos.
 * @return {Object} The Schedule
 */
 

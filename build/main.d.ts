@@ -65,5 +65,10 @@ export declare class SchulmanagerAPI {
         startClass: string;
         endClass: string;
     }[]>;
+    /**
+* Get current infos.
+* @return {Object} The Schedule
+*/
+    getInfos(): Promise<string | import("./types/infoResponse").default>;
 }
 //# sourceMappingURL=main.d.ts.map

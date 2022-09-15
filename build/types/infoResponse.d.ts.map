@@ -1,0 +1,1 @@
+{"version":3,"file":"infoResponse.d.ts","sourceRoot":"","sources":["../../src/types/infoResponse.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,WAAW,YAAY;IACjC,OAAO,EAAE;QACL,MAAM,EAAE,MAAM;QACd,IAAI,EAAE;YAAC;gBACH,IAAI,CAAC,EAAE,MAAM,CAAC;gBACd,IAAI,CAAC,EAAE,MAAM,CAAA;aAChB;SAAC,GAAG,IAAI;KACZ,CAAA;CACJ"}
