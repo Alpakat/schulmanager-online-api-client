@@ -66,6 +66,15 @@ export class SchulmanagerAPI {
 	}
 
 	/**
+* Get info about user after login
+* @return {Object} User
+*/
+
+	getUser() {
+		return this.#user
+	}
+
+	/**
 * Get token after login.
 * @return {String} Token
 */

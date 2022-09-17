@@ -1,3 +1,4 @@
+import { User } from "./types/loginResponse";
 /**
  * Interface for the SMO Api.
  *
@@ -18,6 +19,11 @@ export declare class SchulmanagerAPI {
 * @param {token?} token - Token of last Login. Recomended over storeToken of this library. If not given or expired, a new login will be created.
 */
     login(email: string, password?: string, token?: string): Promise<void>;
+    /**
+* Get info about user after login
+* @return {Object} User
+*/
+    getUser(): User | undefined;
     /**
 * Get token after login.
 * @return {String} Token

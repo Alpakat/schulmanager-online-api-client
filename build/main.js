@@ -65,6 +65,13 @@ class SchulmanagerAPI {
         }
     }
     /**
+* Get info about user after login
+* @return {Object} User
+*/
+    getUser() {
+        return __classPrivateFieldGet(this, _SchulmanagerAPI_user, "f");
+    }
+    /**
 * Get token after login.
 * @return {String} Token
 */
