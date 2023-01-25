@@ -7,7 +7,7 @@ const axios_1 = __importDefault(require("axios"));
 const generateStandartConfig_1 = __importDefault(require("../generateStandartConfig"));
 async function getLetters({ token }) {
     const data = JSON.stringify({
-        "bundleVersion": `c2a60433dcd7c3fc6ee1`,
+        "bundleVersion": `alpiAPIClient`,
         "requests": [
             {
                 "moduleName": `letters`,

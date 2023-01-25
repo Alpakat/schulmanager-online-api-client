@@ -7,7 +7,7 @@ const axios_1 = __importDefault(require("axios"));
 const generateStandartConfig_1 = __importDefault(require("../generateStandartConfig"));
 async function getExams({ token, dates, student }) {
     const data = JSON.stringify({
-        "bundleVersion": `3128cbe28328d945ac28`,
+        "bundleVersion": `alpiAPIClient`,
         "requests": [
             {
                 "moduleName": `exams`,
