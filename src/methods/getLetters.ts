@@ -5,7 +5,7 @@ import { LettersResponse } from "../types/lettersResponse"
 export default async function getLetters({ token }: { token: string }) {
 
 	const data = JSON.stringify({
-		"bundleVersion": `alpiAPIClient`,
+		"bundleVersion": `42424242424242424242`,
 		"requests": [
 			{
 				"moduleName": `letters`,

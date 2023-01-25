@@ -6,7 +6,7 @@ export default async function getSchedules({ token, dates, student }: { token: s
 
 	const data = JSON.stringify(
 		{
-			"bundleVersion": `alpiAPIClient`,
+			"bundleVersion": `42424242424242424242`,
 			"requests": [
 				{
 					"moduleName": `schedules`,

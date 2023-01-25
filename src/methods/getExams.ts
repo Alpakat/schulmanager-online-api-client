@@ -6,7 +6,7 @@ export default async function getExams({ token, dates, student }: { token: strin
 
 	const data = JSON.stringify(
 		{
-			"bundleVersion": `alpiAPIClient`,
+			"bundleVersion": `42424242424242424242`,
 			"requests": [
 				{
 					"moduleName": `exams`,
